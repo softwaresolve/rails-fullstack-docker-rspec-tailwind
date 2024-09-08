@@ -1,0 +1,75 @@
+pt-BR:
+  active_admin:
+    inspections: Inspeções
+    buildings: Torres
+    projects: Projetos
+    units: Unidades
+    components: Areas
+    criterions: Conformidades
+    dashboard: Dashboard
+  activerecord:
+    models:
+      inspection_component:
+        status: situacao
+      inspection_criterion:
+        one: Criterio
+        other: Criterios
+      component:
+        one: Area
+        other: Areas
+      criterion:
+        one: Criterio
+        other: Criterios
+      justification:
+        one: Justificativa
+        other: Justificativas
+      building:
+        one: Torre
+        other: Torres
+      project:
+        one:  Projeto
+        other: Projetos
+      unit:
+        one:  Unidade
+        other: Unidades
+      inspection:
+        one:  Inspeção
+        other: Inspeções
+    attributes:
+      inspection_criterion:
+        status: situacao
+        order: ordem
+      inspection_component/status:
+        draf: rascunho
+        current: em revisao
+        rejected: rejeitado
+        approved: aprovado
+        not_related: nao relacionado
+      inspection_criterion/status:
+        draf: rascunho
+        current: em revisao
+        rejected: rejeitado
+        approved: aprovado
+        not_related: nao relacionado
+      justification:
+        description: descrição
+        order: ordem
+        status: situação
+      criterion:
+        name: nome
+      project:
+        name: nome
+      unit:
+        name: nome
+        status: situação
+      inspection:
+        status: situação
+      justification/status:
+        approved: aprovado
+        rejected: rejeitado
+        not_related: nao relactionado
+      inspection/status: 
+        draft: rascunho
+        inspecting: inspecionando
+        reporting: em relatorio
+        done: feito

@@ -1,0 +1,19 @@
+<%= link_to '#', class: card_container_klass(current_step.to_s == step.to_s) do %>
+  <% if current_step.to_s == step.to_s %>
+    <div class="flex size-8 flex-none items-center justify-center rounded-full border-4 border-teal-600 font-semibold text-gray-600 dark:border-teal-500 dark:text-gray-300">
+      <%= step_number %>
+    </div>
+  <% elsif status_position(step) > status_position(current_step) %>
+    <div class="flex size-8 flex-none items-center justify-center rounded-full border-4 border-teal-600 font-semibold text-gray-600 dark:border-teal-500 dark:text-gray-300">
+      <%= step_number %>
+    </div>
+  <% else %>
+  <div class="flex size-8 flex-none items-center justify-center rounded-full bg-teal-600 font-semibold text-white dark:bg-teal-500">
+    <%= render 'shared/icons/checked' %>
+  </div>
+  <% end %>
+  <div class="grow">
+    <div class="mb-0.5 font-semibold"><%= title %></div>
+    <div><%= description %></div>
+  </div>
+<% end %>

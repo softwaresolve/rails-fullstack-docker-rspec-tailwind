@@ -1,0 +1,13 @@
+<%= link_to '#', class: 'flex items-center gap-3 rounded-lg border border-transparent p-3 text-sm hover:border-gray-100 hover:bg-gray-50 active:hover:border-gray-200 dark:hover:border-gray-700/50 dark:hover:bg-gray-900/25 dark:active:border-gray-700' do %>
+  <div class="flex size-8 flex-none items-center justify-center rounded-full border-4 border-teal-600 font-semibold text-gray-600 dark:border-teal-500 dark:text-gray-300">
+    <%= step_number %>
+  </div>
+  <div class="grow">
+    <div class="mb-0.5 font-semibold text-teal-600 dark:text-teal-400">
+      <%= title %>
+    </div>
+    <div>
+      <%= description %>
+    </div>
+  </div>
+<% end %>

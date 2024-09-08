@@ -1,0 +1,15 @@
+default: &default
+  adapter: "redis"
+  url: <%= ENV.fetch("REDIS_URL") %>
+
+development:
+  <<: *default
+  channel_prefix: "rails-template_development"
+
+test:
+  <<: *default
+  adapter: "test"
+
+production:
+  <<: *default
+  channel_prefix: "rails-template_production"

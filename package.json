@@ -1,0 +1,27 @@
+{
+  "name": "rails-template",
+  "private": true,
+  "dependencies": {
+    "@hotwired/stimulus": "3.2.2",
+    "@hotwired/turbo-rails": "^8.0.4",
+    "@rails/request.js": "^0.0.9",
+    "autoprefixer": "10.4.19",
+    "chart.js": "^4.4.3",
+    "esbuild": "0.20.2",
+    "postcss": "8.4.38",
+    "postcss-import": "16.1.0",
+    "puppeteer": "22.15.0",
+    "tailwindcss": "3.4.3",
+    "toastify-js": "^1.12.0"
+  },
+  "scripts": {
+    "build": "./run yarn:build",
+    "build:css": "./run yarn:build:css"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.12"
+  },
+  "packageManager": "yarn@4.1.1"
+}

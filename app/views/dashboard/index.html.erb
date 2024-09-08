@@ -1,0 +1,55 @@
+<% content_for :body do %>
+  <!-- Statistics: Simple with Charts -->
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-8" data-controller="app--charts">
+
+    <% @projects.each do |project| %>
+      <div class="w-full flex items-center justify-between gap-2 rounded-lg bg-white p-5 shadow-sm dark:bg-gray-800 dark:text-gray-100">
+        <div class="w-full flex flex-col overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800 dark:text-gray-100">
+          <div class="aspect-h-10 aspect-w-16">
+            <% if project.image.attached? %>
+              <%= image_tag url_for(project.image), height: 1024, width: 640 %>
+            <% end %>
+          </div>
+
+          <div class="grow p-5">
+            <h3 class="mb-2 text-lg font-semibold"><%= project.name %></h3>
+            <!-- <p class="text-3xl"> $180 <span class="text-lg text-gray-600 dark:text-gray-400">per night</span> -->
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-2 divide-x divide-gray-200 border-y border-gray-200 bg-gray-50 px-5 text-center text-sm dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-700/50 dark:text-gray-400"
+            >
+            <dl class="py-3">
+              <dt class="mb-1 text-lg font-semibold"><%= project.buildings.count %></dt>
+              <dd
+                class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                >
+                <%= Building.model_name.human(count: project.buildings.count) %>
+              </dd>
+            </dl>
+            <dl class="py-3">
+              <dt class="mb-1 text-lg font-semibold"><%= project.units.count %></dt>
+              <dd
+                class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                >
+                <%= Unit.model_name.human(count: project.units.count) %>
+              </dd>
+            </dl>
+          </div>
+
+          <div
+            class="w-full grid grid-cols-1 gap-4 bg-gray-50 px-5 py-4 text-center text-sm sm:grid-cols-2 lg:gap-6 dark:divide-gray-700 dark:bg-gray-700/50 dark:text-gray-400"
+            >
+            <div class="w-full">
+              <%= link_to project_path(project), class: "group inline-flex w-full items-center justify-between gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 font-semibold leading-6 text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300/25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600/40 dark:active:border-gray-700" do  %>
+                <span>ver</span>
+                  <%= render partial: 'shared/icons/hi-arrow-right' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

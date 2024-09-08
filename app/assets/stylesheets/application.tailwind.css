@@ -1,0 +1,24 @@
+/*
+ * Your custom CSS goes here but before adding a lot of CSS check this out:
+ *   https://tailwindcss.com/docs/extracting-components
+*/
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "toastify-js/src/toastify";
+
+p, em, textarea {
+  @apply text-gray-300;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+@media print {
+  .page-break{
+    page-break-inside: avoid;
+  }
+}

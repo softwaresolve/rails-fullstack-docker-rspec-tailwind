@@ -1,0 +1,9 @@
+en:
+  rails-template: "RailsTemplate!"
+  active_admin:
+    inspections: Inspections
+    buildings: Buildings
+    projects: Projects
+    units: Units
+    components: Components
+    criterions: Criterions

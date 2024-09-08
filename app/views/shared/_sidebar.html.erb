@@ -1,0 +1,87 @@
+<nav id="page-sidebar" data-app--sidebar-target="toggleable" class="fixed bottom-0 left-0 top-0 z-50 flex h-full w-full -translate-x-full flex-col border-r border-gray-200 bg-white transition-transform duration-500 ease-out dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200 lg:w-64 lg:translate-x-0" aria-label="Main Sidebar Navigation">
+
+  <div class="flex h-16 w-full flex-none items-center justify-between px-4 dark:bg-gray-600/25 lg:justify-center">
+    <!-- Brand -->
+
+    <%= link_to '#', class: 'group inline-flex items-center gap-2 text-lg font-bold tracking-wide text-gray-900 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300' do %>
+      <%= render partial: 'shared/icons/logo' %>
+      <span>BVU</span>
+    <% end %>
+
+    <!-- Close Sidebar on Mobile -->
+    <div class="lg:hidden">
+      <button
+        type="button"
+        data-action="click->app--sidebar#toggle"
+        class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300/25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600/40 dark:active:border-gray-700"
+        >
+        <%= render partial: 'shared/icons/hi-x-mark' %>
+      </button>
+    </div>
+    <!-- END Close Sidebar on Mobile -->
+  </div>
+  <!-- END Sidebar Header -->
+
+  <!-- Sidebar Navigation -->
+  <div class="overflow-y-auto">
+    <div class="w-full p-4">
+      <nav class="space-y-1">
+        <%= link_to root_path, class: current_page_klass('pages', 'home') do %>
+          <span class="flex flex-none items-center text-teal-500 dark:text-gray-300">
+            <%= render partial: 'shared/icons/home-icon' %>
+          </span>
+          <span class="grow py-2">Dashboard</span>
+        <% end %>
+
+        <div class="px-3 pb-2 pt-5 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          Conformidades
+        </div>
+        <%= link_to inspections_path, class: current_page_klass('inspections', ['index', 'new']) do %>
+          <span class="flex flex-none items-center text-gray-400 group-hover:text-teal-500 dark:text-gray-500 dark:group-hover:text-gray-300">
+            <%= render partial: 'shared/icons/hi-briefcase' %>
+          </span>
+          <span class="grow py-2">Inspecoes</span>
+        <% end %>
+        <%= link_to new_inspection_path, class: 'group flex items-center gap-2 rounded-lg border border-transparent px-2.5 text-sm font-medium text-gray-800 hover:bg-teal-50 hover:text-gray-900 active:border-teal-100 dark:text-gray-200 dark:hover:bg-gray-700/75 dark:hover:text-white dark:active:border-gray-600' do %>
+          <span class="flex flex-none items-center text-gray-400 group-hover:text-teal-500 dark:text-gray-500 dark:group-hover:text-gray-300">
+            <%= render partial: 'shared/icons/briefcase' %>
+          </span>
+          <span class="grow py-2">Add New</span>
+        <% end %>
+        <div class="px-3 pb-2 pt-5 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          Relatorios
+        </div>
+        <%= link_to units_path, class: current_page_klass('units', ['index']) do %>
+          <span class="flex flex-none items-center text-gray-400 group-hover:text-teal-500 dark:text-gray-500 dark:group-hover:text-gray-300">
+            <%= render partial: 'shared/icons/hi-cube' %>
+          </span>
+          <span class="grow py-2"><%= Unit.model_name.human%></span>
+        <% end %>
+
+        <div class="px-3 pb-2 pt-5 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          Account
+        </div>
+        <%= link_to profile_path, class: current_page_klass('profile', ['index']) do %>
+          <span class="flex flex-none items-center text-gray-400 group-hover:text-teal-500 dark:text-gray-500 dark:group-hover:text-gray-300">
+            <%= render partial: 'shared/icons/hi-user-circle' %>
+          </span>
+          <span class="grow py-2">Profile</span>
+        <% end %>
+        <a href="javascript:void(0)" class="group flex items-center gap-2 rounded-lg border border-transparent px-2.5 text-sm font-medium text-gray-800 hover:bg-teal-50 hover:text-gray-900 active:border-teal-100 dark:text-gray-200 dark:hover:bg-gray-700/75 dark:hover:text-white dark:active:border-gray-600">
+          <span class="flex flex-none items-center text-gray-400 group-hover:text-teal-500 dark:text-gray-500 dark:group-hover:text-gray-300">
+            <%= render partial: 'shared/icons/hi-cog-8-tooth' %>
+          </span>
+          <span class="grow py-2">Settings</span>
+        </a>
+        <%= button_to destroy_user_session_path, method: :delete, role: 'menuitem', class: 'group flex items-center gap-2 rounded-lg border border-transparent px-2.5 text-sm font-medium text-gray-800 hover:bg-teal-50 hover:text-gray-900 active:border-teal-100 dark:text-gray-200 dark:hover:bg-gray-700/75 dark:hover:text-white dark:active:border-gray-600' do  %>
+          <span class="flex flex-none items-center text-gray-400 group-hover:text-teal-500 dark:text-gray-500 dark:group-hover:text-gray-300">
+            <%= render partial: 'shared/icons/hi-lock-closed' %>
+          </span>
+          <span class="grow py-2">Log out</span>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+  <!-- END Sidebar Navigation -->
+</nav>
+
